@@ -1,0 +1,345 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --success: #10b981;
+    --border-radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Profile Header */
+.profile-header {
+    text-align: center;
+    margin-top: 20px;
+}
+.profile-header .avatar {
+    width: 96px;
+    height: 96px;
+    background: linear-gradient(45deg, var(--accent), #8b5cf6);
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+.profile-header h1 { font-size: 1.5rem; font-weight: 700; }
+.profile-header p { color: var(--text-muted); font-size: 0.9rem; }
+
+.social-links-section {
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px;
+}
+
+/* General Buttons / Links */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px;
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    border: 1px solid #334155;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    background-color: #273549;
+}
+.btn-primary {
+    background-color: var(--accent);
+    border: none;
+}
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Recent Posts Grid */
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.section-discamer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+.post-card {
+    background-color: var(--card-bg);
+    aspect-ratio: 1;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #334155;
+}
+.post-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.post-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.post-card:hover .post-overlay { opacity: 1; }
+
+.divider {
+    border: 0; 
+    border-top: 1px solid #334155; 
+    margin: 10px 0;
+}
+
+/* Pricing Packages */
+.packages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.package-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    border: 1px solid #334155;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.package-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.package-name { font-weight: 700; font-size: 1.2rem; }
+.package-price { font-weight: 700; color: var(--success); font-size: 1.2rem; }
+.package-features {
+    list-style: none;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+.package-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+/* Modal Overlay System */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+}
+.modal.active { display: flex; }
+.modal-content {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 450px;
+    border-radius: var(--border-radius);
+    padding: 24px;
+    border: 1px solid #334155;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Custom Builder UI Elements */
+.custom-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0f172a;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+.custom-item-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.custom-item-info input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+.qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.qty-btn {
+    background: #334155;
+    border: none;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.qty-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.total-display {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: right;
+    margin: 20px 0;
+    color: var(--success);
+}
+
+/* Add these additions to your existing style.css code */
+
+.filter-tabs {
+    display: flex;
+    background-color: var(--card-bg);
+    padding: 6px;
+    border-radius: var(--border-radius);
+    border: 1px solid #334155;
+    margin-bottom: 16px;
+    gap: 4px;
+}
+
+.tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    padding: 10px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background-color: var(--accent);
+    color: var(--text-main);
+}
+
+/* Smooth filtering item toggle physics */
+.gallery-item {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.avatar {
+    width: 80px; /* Adjust size as needed to match your layout */
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden; /* This crops the image into a perfect circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents the image from stretching or distorting */
+}
+
+/* The main button container */
+.stack-button {
+  display: inline-flex;
+  flex-direction: row;     /* Puts icon and text group side-by-side */
+  align-items: center;     /* Centers icon and text vertically */
+  gap: 12px;               /* Adds clean spacing between icon and text */
+  padding: 12px 20px;
+}
+
+/* The wrapper just for the text elements */
+.text-group {
+  display: flex;
+  flex-direction: column;  /* Stacks the main and sub text vertically */
+  align-items: flex-start; /* Aligns both lines of text perfectly to the left */
+  text-align: left;
+}
+
+/* Optional styling to make it look great */
+.main-text {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.sub-text {
+  font-size: 13px;
+  color: #adadad;             /* Makes the email address slightly lighter */
+  line-height: 1.2;
+}

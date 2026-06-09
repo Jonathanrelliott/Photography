@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect & Book Jon Elliott</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="profile-header">
+            <div class="avatar">
+                <img src="profile.png" alt="Jonathan Elliott Photography" class="avatar-img">
+            </div>
+            <h1>Jon Elliott</h1>
+            <p>Sports & Live Event Photographer</p>
+        </header>
+
+        <section class="social-links-section">
+            <a href="https://instagram.com/jon.e_photo" id="instagram-link" target="_blank" class="btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <!-- <a href="https://twitter.com" target="_blank" class="btn"><i class="fa-brands fa-x-twitter"></i> Twitter / X</a>
+            <a href="https://youtube.com" target="_blank" class="btn"><i class="fa-brands fa-youtube"></i> YouTube</a> -->
+        </section>
+
+        <section>
+            <button class="btn stack-button " onclick="sendDirectEmail()"><i class="fa-solid fa-envelope"></i> 
+                <b class="text-group">  
+                    <span class="main-text">Drop Me An Email</span> 
+                    <span class="sub-text">elliott.jonathan.r@gmail.com</span> 
+                </b> 
+        </section>
+
+        <hr class="divider">
+
+        <section>
+            <h2 class="section-title">Latest from Instagram</h2>
+            <div class="instagram-feed-container">
+                <behold-widget feed-id="PPZBKkbmReLHg1l6a2eT"></behold-widget>
+                <script>
+                (() => {
+                    const d=document,s=d.createElement("script");s.type="module";
+                    s.src="https://w.behold.so/widget.js";d.head.append(s);
+                })();
+                </script>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section>
+            <h2 class="section-title"><i class="fa-solid fa-baseball-bat-ball"></i> Sports Photography Packages</h2>
+            <h3 class="section-discamer">The 'Book now'aqwadasd button uses your default mail app. If it's not working, please send an email with your package details.</h3>
+            <div class="packages-list" id="sports-packages-container">
+                </div>
+        </section>
+
+        <hr class="divider">
+
+        <section>
+            <h2 class="section-title"><i class="fa-solid fa-guitar"></i> Concerts & Other Events Packages</h2>
+            <h3 class="section-discamer">The 'Book now' button uses your default mail app. If it's not working, please send an email with your package details.</h3>
+            <div class="packages-list" id="concert-packages-container">
+                </div>
+        </section>
+
+        <hr class="divider">
+
+        <section>
+            <h2 class="section-title"><i class="fa-solid "></i> Need something different?</h2>
+            <div class="packages-list" id="custom-packages-container">
+                </div>
+            <div class="package-card" style="border: 1px dashed var(--accent);">
+            <div class="package-header">
+                <span class="package-name">Need Something Different?</span>
+                <span class="package-price" style="font-size:1rem;">Let's Talk!</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Have a multi-day tournament, a specific tournament budget, or looking for full-season team coverage? Let’s build the perfect package.</p>
+            <button class="btn" style="border-color: var(--accent); color: var(--accent);" onclick="launchCreateEmail()">Lets Talk</button>
+        </div>
+        </section>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
