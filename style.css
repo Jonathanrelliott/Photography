@@ -101,10 +101,22 @@ body {
     color: var(--text-muted);
     margin-bottom: 16px;
 }
+.instagram-fallback {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.instagram-fallback-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
+}
+.instagram-fallback-grid {
+    margin-top: 2px;
 }
 .post-card {
     background-color: var(--card-bg);
@@ -342,4 +354,22 @@ body {
   font-size: 13px;
   color: #adadad;             /* Makes the email address slightly lighter */
   line-height: 1.2;
+}
+
+.fallback-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This stops the stretching and crops the image perfectly to fill the 4:3 space */
+    display: block;
+    transition: transform 0.3s ease;
+}
+.fallback-card:hover img {
+    transform: scale(1.05); /* Adds a subtle zoom effect on hover */
+}
+
+.abt-me {
+    margin-top: 12px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
