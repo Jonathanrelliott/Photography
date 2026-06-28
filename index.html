@@ -1,100 +1,176 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect & Book Jon Elliott</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EditGenlx - Sports & Event Photography</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="#home" aria-label="EditGenlx home">
+        <img src="Assets/Logo.png" alt="EditGenlx logo" class="brand-mark">
+        <span>Edit<span>Genlx</span></span>
+      </a>
 
-    <div class="container">
-        
-        <header class="profile-header">
-            <div class="avatar">
-                <img src="profile.png" alt="Jonathan Elliott Photography" class="avatar-img">
-            </div>
-            <h1>Jon Elliott</h1>
-            <p>Sports & Live Event Photographer</p>
-        </header>
+      <button class="menu-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-        <section class="social-links-section">
-            <a href="https://instagram.com/jon.e_photo" id="instagram-link" target="_blank" class="btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
-            <!-- <a href="https://twitter.com" target="_blank" class="btn"><i class="fa-brands fa-x-twitter"></i> Twitter / X</a>
-            <a href="https://youtube.com" target="_blank" class="btn"><i class="fa-brands fa-youtube"></i> YouTube</a> -->
-        </section>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#plans">Plans</a></li>
+        <li><a class="nav-button" href="#contact">Book Now</a></li>
+      </ul>
+    </nav>
 
-        <section>
-            <button class="btn stack-button " onclick="sendDirectEmail()"><i class="fa-solid fa-envelope"></i> 
-                <b class="text-group">  
-                    <span class="main-text">Drop Me An Email</span> 
-                    <span class="sub-text">elliott.jonathan.r@gmail.com</span> 
-                </b> 
-        </section>
-
-        <hr class="divider">
-
-        <section id="instagram-section">
-            <h2 class="section-title">Latest from Instagram</h2>
-            <div class="instagram-feed-container">
-                <behold-widget feed-id="PPZBKkbmReLHg1l6a2eT"></behold-widget>
-                <script>
-                (() => {
-                    const d=document,s=d.createElement("script");s.type="module";
-                    s.src="https://w.behold.so/widget.js";d.head.append(s);
-                })();
-                </script>
-            </div>
-        </section>
-
-        <hr class="divider">
-
-        
-
-        <section>
-            <h2 class="section-title"><i class="fa-solid fa-baseball-bat-ball"></i> Sports Photography Packages</h2>
-            <h3 class="section-discamer">The 'Book now' button uses your default mail app. If it's not working, please send an email with your package details.</h3>
-            <div class="packages-list" id="sports-packages-container">
-                </div>
-        </section>
-
-        <hr class="divider">
-
-        <section>
-            <h2 class="section-title"><i class="fa-solid fa-guitar"></i> Concerts & Other Events Packages</h2>
-            <h3 class="section-discamer">The 'Book now' button uses your default mail app. If it's not working, please send an email with your package details.</h3>
-            <div class="packages-list" id="concert-packages-container">
-                </div>
-        </section>
-
-        <hr class="divider">
-
-        <section>
-            <h2 class="section-title"><i class="fa-solid fa-questionwasd"></i> Need something different?</h2>
-            <div class="packages-list" id="custom-packages-container">
-                </div>
-            <div class="package-card" style="border: 1px dashed var(--accent);">
-            <div class="package-header">
-                <span class="package-name">Need Something Different?</span>
-                <span class="package-price" style="font-size:1rem;">Let's Talk!</span>
-            </div>
-            <p style="font-size: 0.9rem; color: var(--text-muted);">Have a multi-day tournament, a specific tournament budget, or looking for full-season team coverage? Let’s build the perfect package.</p>
-            <button class="btn" style="border-color: var(--accent); color: var(--accent);" onclick="launchCreateEmail()">Lets Talk</button>
-        </div>
-        </section>
-
-        <hr class="divider">
-
-        <section>
-            <h2 class="section-title"><i class="fa-solid fa-camera"></i> About me</h2>
-            <p class="section-description abt-me">&emsp;My journey with photography began back in elementary school when I received my very first camera. Back then, it was all about the simple joy of capturing a moment in "Auto" mode. By the time I reached my freshman year of high school, I found myself wanting more control over the final image. I began diving into manual settings, experimenting with everything from low-light astrophotography and capturing the moon to freezing fast-paced action. That period of trial and error taught me exactly how light, motion, and shutter speed work together to create a compelling shot.</p>
-            <p class="section-description abt-me">&emsp;My true passion for sports photography sparked completely by accident in June 2023, while I was photographing my younger cousin’s baseball game. That experience motivated me to start heading to the park near my house, where I would spend hours refining my settings and tracking the action on the field.</p>
-            <p class="section-description abt-me">&emsp;Today, my process is a constant study of the environment. I am always looking at how light hits my subjects and experimenting with new angles to find the most impactful perspective. Whether I’m behind the lens at a tournament or out in the field, I’m focused on capturing the grit and energy of the game in every frame.</p>
-        </section>
-
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#gallery" onclick="closeMenu()">Gallery</a>
+      <a href="#plans" onclick="closeMenu()">Plans</a>
+      <a href="#contact" onclick="closeMenu()">Book Now</a>
     </div>
+  </header>
 
-    <script src="app.js"></script>
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Sports & event photography</span>
+          <h1>Every moment, <span>captured in frame.</span></h1>
+          <p>From sideline action to post-game celebrations, EditGenlx delivers sharp, high-energy photography with a clean and simple booking experience.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#gallery">View My Work</a>
+            <a class="button button-secondary" href="#plans">See Plans</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="Assets/Heading.png" alt="Moody forest landscape" class="hero-image">
+          <div class="hero-card">
+            <img src="Assets/Logo.png" alt="Camera icon" class="hero-card-icon">
+            <div>
+              <strong>Fast turnarounds</strong>
+              <p>Private delivery and simple downloads</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-strip">
+      <div class="container stats-grid">
+        <article class="stat-card">
+          <strong>50+</strong>
+          <span>Events Shot</span>
+        </article>
+        <article class="stat-card">
+          <strong>4+</strong>
+          <span>Teams Covered</span>
+        </article>
+        <article class="stat-card">
+          <strong>500+</strong>
+          <span>Photos Delivered</span>
+        </article>
+        <article class="stat-card">
+          <strong>99.9%</strong>
+          <span>Client Satisfaction</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <img src="Assets/Me.png" alt="Portrait of the photographer" class="about-image">
+        </div>
+
+        <div class="section-copy">
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">Built for the sidelines</h2>
+          <p class="section-text">I specialize in capturing the raw energy of sports and events, from the first whistle to the final celebration. Whether it is a local game or a full tournament, I keep the focus on sharp moments and clean delivery.</p>
+          <p class="section-text">Photos are delivered through a private online gallery and direct download link, so you can view and share everything without an extra platform in the middle.</p>
+          <div class="tag-list">
+            <span class="tag">Sports</span>
+            <span class="tag">Events</span>
+            <span class="tag">Game Days</span>
+            <span class="tag">Tournaments</span>
+            <span class="tag">Travel Shoots</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-heading-row">
+          <div>
+            <span class="section-label">Portfolio</span>
+            <h2 class="section-title">Recent work</h2>
+          </div>
+          <p class="section-text section-text-compact">Use this section for your best shots, game-day highlights, or new uploads as you grow the site.</p>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <section class="section plans-section" id="plans">
+      <div class="container">
+        <div class="section-center">
+          <span class="section-label">Pricing</span>
+          <h2 class="section-title">Photo plans</h2>
+          <p class="section-text section-text-center">Plans are rendered from JavaScript, so you can change pricing, features, or labels in one place later.</p>
+        </div>
+
+        <div class="plans-grid" id="plansGrid"></div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="section-copy contact-copy">
+          <span class="section-label section-label-light">Get in touch</span>
+          <h2 class="section-title section-title-light">Book a session</h2>
+          <p class="section-text section-text-light">Share the event details and I will get back to you within 24 hours.</p>
+        </div>
+
+        <form class="contact-form" id="contactForm" action="/api/contact" method="post" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+          </div>
+          <select id="planSelect" name="plan" data-plan-select>
+            <option value="" disabled selected>Interested Plan</option>
+          </select>
+          <textarea name="details" placeholder="Tell me about your event - date, location, and what you are looking for..."></textarea>
+          <button type="submit">Send Message</button>
+          <p class="form-status" id="formStatus" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand brand-footer" href="#home">
+        <img src="Assets/Logo.png" alt="EditGenlx logo" class="brand-mark">
+        <span>Edit<span>Genlx</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#plans">Plans</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 EditGenlx. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
